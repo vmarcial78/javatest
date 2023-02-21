@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-//http://localhost:8080/MeepSunA3
+//http://localhost:8080/MeepSunA3 
 public class HelloController {
 
     @RequestMapping("/MeepSunA3")
