@@ -17,7 +17,7 @@ public class HelloController {
     public String getName(@RequestParam (value = "name",defaultValue = "world" )String name  ){
 
     return "hello  " + name  ;
-
+ 
 }
 
 
