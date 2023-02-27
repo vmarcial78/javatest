@@ -1,11 +1,44 @@
+//express is our webframe work for our back end 
 const express = require('express')
-const index = express()
+const app = express()
 const port = 8081
 
-index.use(express.static('publichtml'))
 
-index.get('/',(req,res) => {res.status(200).sendFile(__dirname + '/publichtml/index.html')})
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true })); 
+//api middlewares 
+app.use(express.json()); //this is to accept data in json format 
+app.use(express.urlencoded({extended: false})); // this is to decode data sent through html form 
+app.use(express.static( 'publichtml'))
 
-//app.use(express.static())
 
-index.listen (port,()=> console.log(`listening on port: ${port} `))
+//get something from server(backened) and front end
+app.get('/form',(req,res) => 
+                 {res.sendFile(__dirname + '/publichtml/index.html')})
+
+
+app.get('/',(req,res) =>{res.sendStatus(200)})
+
+
+//get something from client and send to backend 
+app.post('/', (req,res)=>{ 
+   
+     (console.log(JSON.stringify(req.body )))
+    // console.log(JSON.stringify({ x: 5, y: 6 }));
+    
+
+})
+
+app.post('/', (req,res)=>{ // res.send(req.body.foodGenre)
+    //
+     (console.log('foodGenre: ' +req.body.foodGenre ))
+    // res.send(req.body.foodGenre)
+   //  (console.log(req.body.foodGenre))
+
+})
+
+
+
+app.listen (port,()=> console.log(`listening on port: ${port} `))
+
+
