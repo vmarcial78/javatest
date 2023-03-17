@@ -1,6 +1,5 @@
-*{
-    padding: 10;
-    margin:0;
+h1{
+    color: rgb(65, 58, 58);
 }
 body{
     height: 100vh;
@@ -9,6 +8,7 @@ body{
     flex-direction:column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(240, 151, 213);
 
 }
 .form{
@@ -25,5 +25,8 @@ input{
 }
 
 button{
-    border-radius: 20px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    
 }
